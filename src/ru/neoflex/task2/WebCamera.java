@@ -1,6 +1,6 @@
 package ru.neoflex.task2;
 
-public class WebCamera implements USB {
+public class WebCamera {
 
     public void insert() {
         System.out.println("Веб камера успешно подключена!");
@@ -14,14 +14,5 @@ public class WebCamera implements USB {
         System.out.println("Веб камера успешно извлечена!");
     }
 
-    @Override
-    public void connectWithUsbCable() {
-        insert();
-        takePhoto();
-    }
 
-    @Override
-    public void disconnectWithUsbCable() {
-        extract();
-    }
 }
