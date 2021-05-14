@@ -13,6 +13,4 @@ public class WebCamera {
     public void extract() {
         System.out.println("Веб камера успешно извлечена!");
     }
-
-
 }
