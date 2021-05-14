@@ -2,7 +2,7 @@ package ru.neoflex.task3;
 
 public class DisplayCredentials {
 
-    private final Credentials userCredentials = new UserCredentialsProxy();
+    private final Credentials userCredentials = new UserCredentialsProxy();//тут происходит подмена на заменитель
     private static DisplayCredentials instance;
 
     private DisplayCredentials() {
