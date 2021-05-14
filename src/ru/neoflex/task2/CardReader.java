@@ -23,13 +23,23 @@ public class CardReader implements USB {
 
     @Override
     public void connectWithUsbCable() {
-        getWebCamera().insert();
-        getWebCamera().takePhoto();
+        if (getWebCamera()!= null){
+            getWebCamera().insert();
+            getWebCamera().takePhoto();
+        } else if (getMicroSD() != null){
+            getMicroSD().insert();
+            getMicroSD().copyData();
+        }
+
     }
 
     @Override
     public void disconnectWithUsbCable() {
-        getMicroSD().extract();
+        if (getWebCamera()!= null){
+            getWebCamera().extract();
+        } else if (getMicroSD() != null){
+            getMicroSD().extract();
+        }
     }
 
     public MicroSD getMicroSD() {
