@@ -1,4 +1,4 @@
-package ru.neoflex.adapter;
+package ru.neoflex.task2;
 
 public class Main {
 
