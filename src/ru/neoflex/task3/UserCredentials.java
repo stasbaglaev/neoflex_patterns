@@ -19,11 +19,22 @@ public class UserCredentials implements Credentials {
                 String line = scanner.nextLine();
                 list.add(line);
             }
-
         } catch (IOException e) {
             System.out.println("Error: " + e);
         }
         listSize = list.size();
         return list.toArray(new String[listSize]);
+    }
+
+    @Override
+    public String getUserCredentials(String login) {
+        String[] userCredentials = readCredentials();
+        for (String credentials : userCredentials) {
+            if (credentials.startsWith(login + ";")) {
+                System.out.println(credentials);
+                return credentials;
+            }
+        }
+        return "";
     }
 }

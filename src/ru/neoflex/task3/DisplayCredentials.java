@@ -19,10 +19,14 @@ public class DisplayCredentials {
         String[] credentials = userCredentials.readCredentials();
         String[] tmpArr;
         System.out.println("Логин\tПароль");
-        for (String arr : credentials) {
-            tmpArr = arr.split(";");
+        for (String userCr : credentials) {
+            tmpArr = userCr.split(";");
             System.out.printf("%s\t%s%n", tmpArr[0], tmpArr[1]);
         }
         System.out.println();
+    }
+
+    public void printCredentials(String login) {
+        userCredentials.getUserCredentials(login);
     }
 }

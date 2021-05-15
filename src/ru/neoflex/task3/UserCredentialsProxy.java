@@ -12,4 +12,18 @@ public class UserCredentialsProxy implements Credentials {
         }
         return credentialsCache;
     }
+
+    @Override
+    public String getUserCredentials(String login) {
+        if (credentialsCache == null) {
+            credentialsCache = userCredentials.readCredentials();
+        }
+        for (String credentials : credentialsCache) {
+            if (credentials.startsWith(login + ";")) {
+                System.out.println(credentials);
+                return credentials;
+            }
+        }
+        return "";
+    }
 }
